@@ -1,0 +1,1207 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IntegrityHub | Academic Integrity</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fa;
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #08111c;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 23px solid #f32643;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #f32643;
+}
+
+.btn {
+    display: inline-block;
+    background: #f32643;
+    color: white;
+    text-decoration: none;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #d71936;
+    transform: translateY(-2px);
+}
+
+.hero {
+    background: #0d1621;
+    color: white;
+    padding: 90px 8%;
+    min-height: 390px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 60px);
+    line-height: 1.15;
+}
+
+.red {
+    color: #f32643;
+}
+
+.hero h3 {
+    margin-top: 20px;
+}
+
+.hero p {
+    color: #b8c4d3;
+    line-height: 1.8;
+    margin: 20px 0 25px;
+    max-width: 650px;
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    width: 86%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.section {
+    padding: 65px 0;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    color: #64748b;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e1e7ef;
+    padding: 23px;
+    border-radius: 13px;
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px #00000010;
+}
+
+.card-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #f32643;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.card h3 {
+    margin: 16px 0 10px;
+    font-size: 16px;
+}
+
+.card p {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.7;
+    flex: 1;
+}
+
+.card .card-link {
+    color: #f32643;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+.dark-section {
+    background: #0d1621;
+    color: white;
+}
+
+.dark-section .section-subtitle {
+    color: #b8c4d3;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-box {
+    background: #152232;
+    border: 1px solid #28374a;
+    padding: 27px;
+    border-radius: 12px;
+}
+
+.info-box h3 {
+    margin-bottom: 15px;
+    color: #f32643;
+}
+
+.info-box p, .info-box li {
+    line-height: 1.8;
+    color: #d0d8e3;
+    font-size: 14px;
+}
+
+.info-box ul {
+    padding-left: 20px;
+}
+
+.guide-section {
+    padding: 75px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.guide-content {
+    background: white;
+    padding: 35px;
+    border-radius: 14px;
+    border: 1px solid #e1e7ef;
+}
+
+.guide-content h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.guide-content h3 {
+    margin: 25px 0 12px;
+    color: #f32643;
+}
+
+.guide-content p {
+    line-height: 1.9;
+    color: #526174;
+    margin-bottom: 15px;
+}
+
+.guide-content ul {
+    padding-left: 25px;
+    color: #526174;
+    line-height: 2;
+}
+
+.example {
+    background: #f4f6fa;
+    border-left: 4px solid #f32643;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.example p {
+    margin: 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #f32643;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* QUIZ */
+
+.quiz {
+    background: white;
+    border-radius: 14px;
+    padding: 30px;
+    border: 1px solid #e1e7ef;
+}
+
+.question {
+    margin: 25px 0;
+    padding: 20px;
+    background: #f7f9fc;
+    border-radius: 10px;
+}
+
+.question h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.question label {
+    display: block;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #dce3ec;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.question label:hover {
+    background: #eef2f7;
+}
+
+.question input {
+    margin-right: 10px;
+}
+
+#quiz-result {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* SEARCH */
+
+.search-box {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #d6deea;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-box:focus {
+    border-color: #f32643;
+    box-shadow: 0 0 0 3px #f3264315;
+}
+
+.reference-list a {
+    color: #f32643;
+    line-height: 2.2;
+    text-decoration: none;
+}
+
+.reference-list a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: #08111c;
+    color: white;
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+footer p {
+    color: #aab6c5;
+    font-size: 12px;
+}
+
+footer a {
+    color: #d4dce6;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 12px;
+}
+
+footer a:hover {
+    color: #f32643;
+}
+
+@media(max-width: 1000px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+
+@media(max-width: 650px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 60px 7%;
+    }
+
+    .cards,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .guide-content {
+        padding: 22px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <div class="logo">
+        <span class="triangle"></span>
+        IntegrityHub
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#guides">Guides</a>
+        <a href="#ethics">Ethics</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#references">References</a>
+    </nav>
+
+    <a href="#guides" class="btn">Get Started</a>
+</header>
+
+<!-- HOMEPAGE -->
+<section class="hero" id="home">
+    <h1>Academic Integrity</h1>
+    <h1 class="red">Builds a Brighter Future</h1>
+
+    <h3>Be honest. Be responsible. Make a difference.</h3>
+
+    <p>
+        Learn to cite sources, avoid plagiarism, respect copyright,
+        and use artificial intelligence responsibly in education.
+    </p>
+
+    <div>
+        <a href="#guides" class="btn">Explore Our Guides →</a>
+        <a href="#about" class="btn" style="background:transparent;border:1px solid white;margin-left:10px;">
+            Learn More
+        </a>
+    </div>
+</section>
+
+<main>
+
+<!-- GUIDES MENU -->
+<section class="section" id="guides">
+<div class="container">
+
+    <h2 class="section-title">Explore Our Guides</h2>
+
+    <p class="section-subtitle">
+        Click any topic below to learn more about academic honesty,
+        proper information use, and responsible technology.
+    </p>
+
+    <!-- SEARCH -->
+    <input
+        type="text"
+        class="search-box"
+        id="searchInput"
+        placeholder="Search topics... (e.g. plagiarism, AI, citation)"
+        onkeyup="searchTopics()"
+    >
+
+    <div class="cards" id="topicCards">
+
+        <div class="card searchable">
+            <span class="card-number">01</span>
+            <h3>Plagiarism Awareness</h3>
+            <p>Learn what plagiarism is and how to avoid academic dishonesty.</p>
+            <a href="#plagiarism" class="card-link">Explore Topic →</a>
+        </div>
+
+        <div class="card searchable">
+            <span class="card-number">02</span>
+            <h3>Citation & Referencing</h3>
+            <p>Learn how to cite sources and give proper credit to authors.</p>
+            <a href="#citation" class="card-link">Explore Topic →</a>
+        </div>
+
+        <div class="card searchable">
+            <span class="card-number">03</span>
+            <h3>Copyright & Fair Use</h3>
+            <p>Understand copyright, permission, and responsible use of content.</p>
+            <a href="#copyright" class="card-link">Explore Topic →</a>
+        </div>
+
+        <div class="card searchable">
+            <span class="card-number">04</span>
+            <h3>Responsible AI Use</h3>
+            <p>Use AI tools ethically as a learning assistant.</p>
+            <a href="#ai" class="card-link">Explore Topic →</a>
+        </div>
+
+        <div class="card searchable">
+            <span class="card-number">05</span>
+            <h3>Academic Integrity Quiz</h3>
+            <p>Test your knowledge of academic honesty and ethics.</p>
+            <a href="#quiz" class="card-link">Take Quiz →</a>
+        </div>
+
+        <div class="card searchable">
+            <span class="card-number">06</span>
+            <h3>Professional Ethics</h3>
+            <p>Discover the values and responsibilities of IT professionals.</p>
+            <a href="#ethics" class="card-link">Explore Topic →</a>
+        </div>
+
+        <div class="card searchable">
+            <span class="card-number">07</span>
+            <h3>Privacy & Security</h3>
+            <p>Protect personal information and practice cybersecurity awareness.</p>
+            <a href="#privacy" class="card-link">Explore Topic →</a>
+        </div>
+
+        <div class="card searchable">
+            <span class="card-number">08</span>
+            <h3>About IntegrityHub</h3>
+            <p>Know our purpose, audience, and website objectives.</p>
+            <a href="#about" class="card-link">Learn More →</a>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- PLAGIARISM -->
+<section class="guide-section" id="plagiarism">
+<div class="container">
+<div class="guide-content">
+
+    <h2>Plagiarism Awareness</h2>
+
+    <p>
+        Plagiarism is presenting another person's words, ideas, work, or
+        information as your own without proper acknowledgment. It violates
+        academic honesty and the original author's intellectual rights.
+    </p>
+
+    <h3>Common Types of Plagiarism</h3>
+
+    <ul>
+        <li>Copying text directly without quotation marks or citation.</li>
+        <li>Using another person's ideas without giving credit.</li>
+        <li>Submitting someone else's work as your own.</li>
+        <li>Paraphrasing without acknowledging the original source.</li>
+        <li>Reusing previous work without permission when prohibited.</li>
+    </ul>
+
+    <h3>How to Avoid Plagiarism</h3>
+
+    <ul>
+        <li>Write using your own understanding.</li>
+        <li>Use quotation marks for directly copied words.</li>
+        <li>Cite the source of borrowed ideas and information.</li>
+        <li>Keep track of websites, books, and materials you use.</li>
+        <li>Review your work before submitting it.</li>
+    </ul>
+
+    <div class="example">
+        <p><strong>Example:</strong> Instead of copying an article paragraph,
+        read and understand the information, write it in your own words,
+        and cite the original author.</p>
+    </div>
+
+    <a href="#guides" class="back-link">← Back to Guides</a>
+
+</div>
+</div>
+</section>
+
+<!-- CITATION -->
+<section class="guide-section" id="citation">
+<div class="container">
+<div class="guide-content">
+
+    <h2>Citation & Referencing</h2>
+
+    <p>
+        Citation is the process of acknowledging the source of information
+        used in your academic work. It gives credit to original authors
+        and allows readers to find the original source.
+    </p>
+
+    <h3>Why Citations Matter</h3>
+
+    <ul>
+        <li>Give proper credit to the original author.</li>
+        <li>Prevent plagiarism.</li>
+        <li>Support your statements with reliable evidence.</li>
+        <li>Allow readers to verify information.</li>
+    </ul>
+
+    <h3>APA 7th Edition Example</h3>
+
+    <div class="example">
+        <p><strong>Book Reference:</strong></p>
+        <p>Author, A. A. (Year). <em>Title of book.</em> Publisher.</p>
+        <br>
+        <p><strong>Website Reference:</strong></p>
+        <p>Author. (Year, Month Day). Title of page. Website Name. URL</p>
+    </div>
+
+    <h3>Example of In-text Citation</h3>
+
+    <div class="example">
+        <p>Technology improves access to information (Santos, 2024).</p>
+    </div>
+
+    <h3>Citation Tips</h3>
+
+    <ul>
+        <li>Always record the author's name.</li>
+        <li>Include the publication date when available.</li>
+        <li>Include the title and URL for online materials.</li>
+        <li>Use the citation format required by your instructor.</li>
+    </ul>
+
+    <a href="#guides" class="back-link">← Back to Guides</a>
+
+</div>
+</div>
+</section>
+
+<!-- COPYRIGHT -->
+<section class="guide-section" id="copyright">
+<div class="container">
+<div class="guide-content">
+
+    <h2>Copyright & Fair Use</h2>
+
+    <p>
+        Copyright protects original creative works such as writing, photos,
+        music, videos, artwork, software, and other intellectual creations.
+        It gives creators rights over how their work is reproduced and used.
+    </p>
+
+    <h3>Examples of Copyrighted Materials</h3>
+
+    <ul>
+        <li>Photographs and illustrations</li>
+        <li>Music and recordings</li>
+        <li>Movies and videos</li>
+        <li>Books and articles</li>
+        <li>Software and digital designs</li>
+    </ul>
+
+    <h3>Responsible Use of Content</h3>
+
+    <ul>
+        <li>Ask permission when required.</li>
+        <li>Check the license before using materials.</li>
+        <li>Credit the creator properly.</li>
+        <li>Do not assume everything online is free to use.</li>
+        <li>Use public domain or properly licensed materials when possible.</li>
+    </ul>
+
+    <div class="example">
+        <p><strong>Remember:</strong> Giving credit does not automatically
+        give permission to use copyrighted material. Always check the
+        license and applicable rules.</p>
+    </div>
+
+    <a href="#guides" class="back-link">← Back to Guides</a>
+
+</div>
+</div>
+</section>
+
+<!-- RESPONSIBLE AI -->
+<section class="guide-section" id="ai">
+<div class="container">
+<div class="guide-content">
+
+    <h2>Responsible AI Use</h2>
+
+    <p>
+        Artificial Intelligence can help students understand lessons,
+        brainstorm ideas, practice skills, and improve writing.
+        However, AI should be used responsibly and should not replace
+        a student's own thinking and learning.
+    </p>
+
+    <h3>Responsible Ways to Use AI</h3>
+
+    <ul>
+        <li>Ask AI to explain difficult lessons.</li>
+        <li>Use AI for brainstorming and planning.</li>
+        <li>Ask for feedback on grammar and writing.</li>
+        <li>Use AI to practice programming concepts.</li>
+        <li>Verify AI-generated facts using credible sources.</li>
+    </ul>
+
+    <h3>What Students Should Avoid</h3>
+
+    <ul>
+        <li>Submitting AI-generated work without following school rules.</li>
+        <li>Using fake or AI-generated references.</li>
+        <li>Trusting AI answers without verification.</li>
+        <li>Using AI to cheat during exams.</li>
+        <li>Sharing private information with AI tools.</li>
+    </ul>
+
+    <div class="example">
+        <p><strong>Ethical AI Rule:</strong> Use AI to assist your learning,
+        not to replace your knowledge, effort, creativity, and responsibility.</p>
+    </div>
+
+    <a href="#guides" class="back-link">← Back to Guides</a>
+
+</div>
+</div>
+</section>
+
+<!-- ETHICS -->
+<section class="section dark-section" id="ethics">
+<div class="container">
+
+    <h2 class="section-title">Professional Ethics</h2>
+
+    <p class="section-subtitle">
+        Ethical principles that guide students and future IT professionals
+        in building responsible and trustworthy technology.
+    </p>
+
+    <div class="info-grid">
+
+        <div class="info-box">
+            <h3>Intellectual Property Rights</h3>
+            <p>Respect the work, creations, code, and ideas of others.
+            Give proper attribution and follow licenses and permissions.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Responsibility & Accountability</h3>
+            <p>Accept responsibility for your work, decisions, errors,
+            and contributions to projects and technology.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Honesty & Integrity</h3>
+            <p>Provide truthful information, avoid cheating, and maintain
+            honesty in academic work and professional activities.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Respect for Others</h3>
+            <p>Respect the privacy, rights, opinions, and dignity of
+            classmates, teachers, users, and other people.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Responsible AI</h3>
+            <p>Understand, verify, and disclose AI assistance.
+            Do not use technology to deceive or mislead.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Accessibility</h3>
+            <p>Design websites and technology that are easy to understand
+            and accessible to different users and abilities.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- PRIVACY -->
+<section class="section" id="privacy">
+<div class="container">
+
+    <h2 class="section-title">Privacy & Security</h2>
+
+    <p class="section-subtitle">
+        Protecting users' information is an important responsibility
+        when developing websites and digital systems.
+    </p>
+
+    <div class="info-grid">
+
+        <div class="info-box" style="background:white;border:1px solid #e1e7ef;">
+            <h3>Privacy Protection</h3>
+            <p>We avoid collecting unnecessary personal information.
+            This website does not ask users for passwords, financial
+            information, or sensitive personal details.</p>
+        </div>
+
+        <div class="info-box" style="background:white;border:1px solid #e1e7ef;">
+            <h3>Cybersecurity Awareness</h3>
+            <p>Users should avoid suspicious links, use strong passwords,
+            protect their accounts, and keep devices updated.</p>
+        </div>
+
+        <div class="info-box" style="background:white;border:1px solid #e1e7ef;">
+            <h3>Safe Website Development</h3>
+            <p>Developers should avoid harmful scripts, unauthorized
+            tracking, and insecure handling of user data.</p>
+        </div>
+
+        <div class="info-box" style="background:white;border:1px solid #e1e7ef;">
+            <h3>Responsible Data Handling</h3>
+            <p>Information should only be collected when necessary,
+            handled responsibly, and protected from unauthorized access.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section dark-section" id="about">
+<div class="container">
+
+    <h2 class="section-title">About IntegrityHub</h2>
+
+    <p class="section-subtitle">
+        Honest Minds. Better Tomorrows.
+    </p>
+
+    <div class="info-grid">
+
+        <div class="info-box">
+            <h3>Our Purpose</h3>
+            <p>IntegrityHub promotes academic honesty, proper citation,
+            plagiarism awareness, copyright respect, and responsible
+            artificial intelligence use among students.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Our Target Audience</h3>
+            <p>Students, teachers, educators, and individuals who want
+            to understand academic integrity and responsible digital behavior.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Website Objectives</h3>
+            <p>Provide easy-to-understand educational guides, promote ethical
+            learning, and encourage responsible use of digital technology.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Technologies Used</h3>
+            <p>HTML for structure, CSS for design and responsive layout,
+            and JavaScript for interactive features.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- QUIZ -->
+<section class="section" id="quiz">
+<div class="container">
+
+    <h2 class="section-title">Academic Integrity Quiz</h2>
+
+    <p class="section-subtitle">
+        Test your knowledge! Choose the correct answer for each question.
+    </p>
+
+    <div class="quiz">
+
+        <form id="quizForm">
+
+            <div class="question">
+                <h3>1. What is plagiarism?</h3>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    Sharing your own ideas
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    Using someone's work without proper credit
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    Reading books for research
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>2. Why is citation important?</h3>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    To make assignments longer
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    To avoid studying
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    To give credit to original authors
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>3. What does copyright protect?</h3>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    Original creative works
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    Every opinion on the internet
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    Public conversations
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>4. How should students use AI responsibly?</h3>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    Submit every AI answer without checking
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    Use AI to help learn and verify its information
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    Let AI do all their academic work
+            </label>
+            </div>
+
+            <div class="question">
+                <h3>5. Which is an example of professional ethics?</h3>
+
+                <label>
+                    <input type="radio" name="q5" value="a">
+                    Accessing files without permission
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="b">
+                    Copying someone's code without credit
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="c">
+                    Respecting privacy and being accountable
+                </label>
+            </div>
+
+            <button type="button" class="btn" onclick="submitQuiz()">
+                Submit Answers
+            </button>
+
+            <button type="reset" class="btn" style="background:#64748b;" onclick="resetQuiz()">
+                Reset Quiz
+            </button>
+
+        </form>
+
+        <div id="quiz-result"></div>
+
+    </div>
+</div>
+</section>
+
+<!-- REFERENCES -->
+<section class="section" id="references">
+<div class="container">
+
+    <h2 class="section-title">References & Resources</h2>
+
+    <p class="section-subtitle">
+        External resources used for further reading and learning.
+        Click the links to visit the official websites.
+    </p>
+
+    <div class="guide-content reference-list">
+
+        <h3>Academic Integrity</h3>
+        <p>
+            <a href="https://www.turnitin.com/" target="_blank" rel="noopener">
+                Turnitin – Academic Integrity and Plagiarism Resources
+            </a>
+        </p>
+
+        <h3>APA Style</h3>
+        <p>
+            <a href="https://apastyle.apa.org/" target="_blank" rel="noopener">
+                APA Style – Official Citation and Referencing Guide
+            </a>
+        </p>
+
+        <h3>Copyright</h3>
+        <p>
+            <a href="https://creativecommons.org/" target="_blank" rel="noopener">
+                Creative Commons – Copyright and Licensing
+            </a>
+        </p>
+
+        <h3>Responsible AI</h3>
+        <p>
+            <a href="https://www.unesco.org/en/artificial-intelligence" target="_blank" rel="noopener">
+                UNESCO – Artificial Intelligence Resources
+            </a>
+        </p>
+
+        <h3>Privacy</h3>
+        <p>
+            <a href="https://privacy.gov.ph/" target="_blank" rel="noopener">
+                National Privacy Commission – Philippines
+            </a>
+        </p>
+
+        <h3>Web Accessibility</h3>
+        <p>
+            <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">
+                W3C Web Accessibility Initiative
+            </a>
+        </p>
+
+    </div>
+
+</div>
+</section>
+
+<!-- AI DISCLOSURE -->
+<section class="section dark-section" id="disclosure">
+<div class="container">
+
+    <h2 class="section-title">AI Use Disclosure</h2>
+
+    <p class="section-subtitle">
+        Transparency is part of academic and professional integrity.
+    </p>
+
+    <div class="info-box">
+        <h3>Statement of AI Assistance</h3>
+
+        <p>
+            Artificial intelligence tools were used as development assistance
+            for brainstorming, organizing content, improving website structure,
+            and assisting with code development. All generated content and code
+            should be reviewed, tested, understood, and verified by the students.
+            The group remains responsible for the accuracy, functionality,
+            and final output of this project.
+        </p>
+    </div>
+
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div>
+        <h3>IntegrityHub</h3>
+        <p>Honest Minds. Better Tomorrows.</p>
+    </div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#guides">Guides</a>
+        <a href="#ethics">Ethics</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#references">References</a>
+    </div>
+
+    <p>© 2026 IntegrityHub | Academic Integrity Website</p>
+</footer>
+
+<script>
+
+// SEARCH FUNCTION
+function searchTopics() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.querySelectorAll(".searchable");
+
+    cards.forEach(function(card) {
+        let text = card.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+// QUIZ FUNCTION
+function submitQuiz() {
+
+    let answers = {
+        q1: "b",
+        q2: "c",
+        q3: "a",
+        q4: "b",
+        q5: "c"
+    };
+
+    let score = 0;
+    let total = Object.keys(answers).length;
+
+    for (let question in answers) {
+
+        let selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    let result = document.getElementById("quiz-result");
+
+    result.style.display = "block";
+
+    if (score === total) {
+        result.style.background = "#dcfce7";
+        result.style.color = "#166534";
+        result.innerHTML = "Perfect Score! " + score + " / " + total +
+        " — Excellent! You understand Academic Integrity!";
+    } else if (score >= 3) {
+        result.style.background = "#fef3c7";
+        result.style.color = "#92400e";
+        result.innerHTML = "Good Job! You scored " + score + " / " + total +
+        ". Keep learning about Academic Integrity!";
+    } else {
+        result.style.background = "#fee2e2";
+        result.style.color = "#991b1b";
+        result.innerHTML = "You scored " + score + " / " + total +
+        ". Review the guides and try again!";
+    }
+
+    result.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+
+// RESET QUIZ
+function resetQuiz() {
+    let result = document.getElementById("quiz-result");
+    result.style.display = "none";
+    result.innerHTML = "";
+}
+
+</script>
+
+</body>
+</html>
